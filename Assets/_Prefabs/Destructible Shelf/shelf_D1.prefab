@@ -30,7 +30,7 @@ GameObject:
   - 64: {fileID: 6474114}
   m_Layer: 0
   m_Name: shelf_D1
-  m_TagString: Destructible
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
