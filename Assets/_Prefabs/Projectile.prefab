@@ -96,6 +96,7 @@ MonoBehaviour:
   target: {fileID: 0}
   maxSpeed: 10
   velocity: {x: 0, y: 0, z: 0}
+  damage: 1
 --- !u!131 &13150646
 GUITexture:
   m_ObjectHideFlags: 1
