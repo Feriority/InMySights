@@ -7,7 +7,7 @@ public class PlayerController : FirstPersonController {
 
 	public GameObject projectile;
 	private int projectileSpawnDistance = 2;
-	private int projectileVelocity = 10;
+	private float maxAngle = 40;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -20,13 +20,39 @@ public class PlayerController : FirstPersonController {
 
 		if(CrossPlatformInputManager.GetButtonDown ("Fire1")) {
 			Transform cameraTransform = m_Camera.transform;
-			GameObject newProjectile = (GameObject) Instantiate (
+			Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
+
+			GameObject newObject = (GameObject) Instantiate (
 				projectile,
-				cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance),
+				spawnPoint,
 				cameraTransform.rotation
 			);
-			Rigidbody rbody = newProjectile.GetComponent<Rigidbody> ();
-			rbody.velocity = cameraTransform.forward * projectileVelocity;
+
+			Projectile newProjectile = newObject.GetComponent<Projectile> ();
+			newProjectile.velocity = cameraTransform.forward * newProjectile.maxSpeed;
+			newProjectile.target = FindNearestTarget (spawnPoint, cameraTransform.forward);
 		}
+	}
+
+	private GameObject FindNearestTarget(Vector3 fromPoint, Vector3 fromDirection) {
+		float minDistance = float.MaxValue;
+		float minAngle = float.MaxValue;
+		GameObject nearestTarget = null;
+
+		GameObject[] objs = GameObject.FindGameObjectsWithTag ("Target");
+		foreach (GameObject obj in objs) {
+			Vector3 ray = obj.transform.position -  fromPoint;
+			float distance = Vector3.Magnitude (ray);
+			float angle = Vector3.Angle (fromDirection, ray);
+			if (angle > maxAngle) { continue; }
+
+			if (distance < minDistance || (distance == minDistance && angle < minAngle)) {
+				minDistance = distance;
+				minAngle = angle;
+				nearestTarget = obj;
+			} 
+		}
+
+		return nearestTarget;
 	}
 }
