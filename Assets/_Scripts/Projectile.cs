@@ -25,11 +25,9 @@ public class Projectile : MonoBehaviour {
     public int damage;
     void OnCollisionEnter(Collision collision) {
         GameObject other = collision.gameObject;
-        if (other.CompareTag("Destructible")) {
-            DestructionController controller = other.GetComponent(typeof(DestructionController)) as DestructionController;
-            if (controller != null) {
-                controller.HP -= damage;
-            }
+        DestructionController controller = other.GetComponent(typeof(DestructionController)) as DestructionController;
+        if (controller != null) {
+            controller.HP -= damage;
         }
         // TODO: particle
 		Destroy (gameObject);
