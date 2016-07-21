@@ -16,7 +16,7 @@ public class DestructionController : MonoBehaviour {
         if(Input.GetMouseButtonDown(0)) {
             //HP -= 1;
         }
-        if (HP == 0) {
+        if (HP <= 0) {
             if (destructionEffect != null) {
                 Instantiate(destructionEffect, transform.position, transform.rotation);
             }
