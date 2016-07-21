@@ -26,10 +26,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 403396}
   - 111: {fileID: 11154602}
-  - 114: {fileID: 11472496}
+  - 114: {fileID: 11491768}
+  - 64: {fileID: 6474114}
   m_Layer: 0
   m_Name: shelf_D1
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +43,7 @@ Transform:
   m_GameObject: {fileID: 196374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 3, z: 1.5}
+  m_LocalScale: {x: 5, y: 3, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 445182}
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122358}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.082818285, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
@@ -94,13 +95,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122358}
   m_Mesh: {fileID: 4300000, guid: dc1cd74d2208845428c5f2f23fc08b23, type: 3}
+--- !u!64 &6474114
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: dc1cd74d2208845428c5f2f23fc08b23, type: 3}
 --- !u!111 &11154602
 Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196374}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: dc1cd74d2208845428c5f2f23fc08b23, type: 3}
   m_Animations:
@@ -109,7 +122,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &11472496
+--- !u!114 &11491768
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -117,11 +130,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 196374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616a27a7882a113418fa9c860a4ba8cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 56d7562a096ce094186c0497261a82cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   remains: {fileID: 192060, guid: df426c2c6d03d5942a7c94a073053143, type: 2}
-  destructionEffect: {fileID: 100012, guid: f3a153ef01a92d04dbdf22d8f0dcaa56, type: 2}
+  destructionEffect: {fileID: 100008, guid: 337943813ac55274db17d9c4dfcaf5ea, type: 2}
   HP: 2
 --- !u!1001 &100100000
 Prefab:
