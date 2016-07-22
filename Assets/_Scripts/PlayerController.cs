@@ -40,11 +40,14 @@ public class PlayerController : FirstPersonController {
 			cameraTransform.rotation * Quaternion.Euler(0,90,90)
 		);
 
+		Debug.Log ("Pew?");
+
 		Projectile newProjectile = newObject.GetComponent<Projectile> ();
 		newProjectile.velocity = cameraTransform.forward * newProjectile.maxSpeed;
 		newProjectile.target = FindNearestTarget (spawnPoint, cameraTransform.forward);
 
 		NetworkServer.Spawn (newObject);
+		Debug.Log ("Pew!");
 	}
 
 	private GameObject FindNearestTarget(Vector3 fromPoint, Vector3 fromDirection) {

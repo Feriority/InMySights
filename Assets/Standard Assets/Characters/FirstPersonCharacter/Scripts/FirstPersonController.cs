@@ -51,13 +51,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         protected virtual void Start()
         {
+            m_CharacterController = GetComponent<CharacterController>();
+            m_Camera = GetComponentInChildren<Camera>();
+            m_OriginalCameraPosition = m_Camera.transform.localPosition;
+
 			if (!shouldDoUpdates)
 				return;
 			
-            m_CharacterController = GetComponent<CharacterController>();
-            m_Camera = GetComponentInChildren<Camera>();
 			m_Camera.enabled = true;
-            m_OriginalCameraPosition = m_Camera.transform.localPosition;
+			GetComponentInChildren<AudioListener> ().enabled = true;
             m_FovKick.Setup(m_Camera);
             m_HeadBob.Setup(m_Camera, m_StepInterval);
             m_StepCycle = 0f;
