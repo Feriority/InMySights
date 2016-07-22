@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.ImageEffects;
 
 public class DestructionController : MonoBehaviour {
 
     public GameObject remains;
     public GameObject destructionEffect;
+    public Camera camera;
+    public int maxDamageFrames;
+    private int damageFrames = 0;
 
     [HideInInspector] public AudioSource source;
     public AudioClip damageSound;
@@ -48,8 +52,13 @@ public class DestructionController : MonoBehaviour {
             } else {
                 Destroy(gameObject);
             }
+        } else if (damageFrames > 0) {
+            damageFrames -= 1;
+            if (damageFrames == 0) {
+                camera.GetComponent<Grayscale>().enabled = false;
+            }
         }
-    }
+    } 
 
     private void Respawn() {
         transform.position = respawnPosition;
@@ -59,6 +68,10 @@ public class DestructionController : MonoBehaviour {
     public void playHit() {
         if (damageSound != null) {
             AudioSource.PlayClipAtPoint(damageSound, new Vector3(0,0,0), 0.7f);
+        }
+        if (camera != null) {
+            camera.GetComponent<Grayscale>().enabled = true;
+            damageFrames = maxDamageFrames;
         }
     }
 }

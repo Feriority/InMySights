@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 449568}
   - 20: {fileID: 2029434}
   - 124: {fileID: 12455706}
+  - 114: {fileID: 11450914}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -281,7 +282,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 1, g: 0.1185121, b: 0.21046084, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -472,12 +473,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remains: {fileID: 0}
   destructionEffect: {fileID: 100000, guid: e41a1ff11fe7f43e3bb0a215c7cd3d54, type: 2}
+  camera: {fileID: 2029434}
+  maxDamageFrames: 10
   source: {fileID: 0}
   damageSound: {fileID: 8300000, guid: bff7b8d254e16dd46bd9b8e56d65fa49, type: 3}
   destructionSound: {fileID: 8300000, guid: 8b780abb96fbbaa46833327c09c682c9, type: 3}
   maxHP: 10
   HP: 0
   respawn: 1
+--- !u!114 &11450914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102038}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
+  textureRamp: {fileID: 0}
+  rampOffset: -0.25
 --- !u!114 &11499554
 MonoBehaviour:
   m_ObjectHideFlags: 1
