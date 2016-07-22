@@ -20,6 +20,3 @@
     - Voice acting
 - Tuning
     - Move nearest target calc point forward (half distance to object under cursor, with cap)
-    - Fix fast projectiles going through things
-        - Raycast forward to detect collisions, use min of that distance and normal travel distance
-        - Set Rigidbody.velocity at each update

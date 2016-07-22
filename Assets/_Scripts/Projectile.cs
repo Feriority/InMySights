@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour {
 			float time = Vector3.Distance(target.transform.position, transform.position) / maxSpeed;
             newPos = Vector3.SmoothDamp (transform.position, target.transform.position, ref velocity, time, maxSpeed);
 		}
-        GetComponent<Rigidbody> ().MovePosition (newPos);
+        GetComponent<Rigidbody> ().velocity = (newPos - transform.position) / Time.deltaTime;
 	}
         
     void OnCollisionEnter(Collision collision) {
