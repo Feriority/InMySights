@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour {
 	public float maxSpeed;
 	[HideInInspector] public Vector3 velocity;
     public int damage;
+    public GameObject impactFX;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +26,14 @@ public class Projectile : MonoBehaviour {
         
     void OnCollisionEnter(Collision collision) {
         GameObject other = collision.gameObject;
-        // TODO: particle
-        Destroy (gameObject);
         DestructionController controller = other.GetComponent(typeof(DestructionController)) as DestructionController;
         if (controller != null) {
             controller.HP -= damage;
         }
+        if (impactFX != null) {
+            // TODO: Clean up explosions
+            Instantiate(impactFX, transform.position, transform.rotation);
+        }
+		Destroy (gameObject);
 	}
 }
