@@ -16,12 +16,14 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Vector3 newPos;
 		if (target == null) {
-			transform.position = transform.position + velocity * Time.deltaTime;
+            newPos = transform.position + velocity * Time.deltaTime;
 		} else {
 			float time = Vector3.Distance(target.transform.position, transform.position) / maxSpeed;
-			transform.position = Vector3.SmoothDamp (transform.position, target.transform.position, ref velocity, time, maxSpeed);
+            newPos = Vector3.SmoothDamp (transform.position, target.transform.position, ref velocity, time, maxSpeed);
 		}
+        GetComponent<Rigidbody> ().MovePosition (newPos);
 	}
         
     void OnCollisionEnter(Collision collision) {
