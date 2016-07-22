@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class DestructionController : MonoBehaviour {
+public class DestructionController : NetworkBehaviour {
 
     public GameObject remains;
     public GameObject destructionEffect;
@@ -19,6 +20,8 @@ public class DestructionController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (!isServer)
+			return;
         if (HP <= 0) {
             if (destructionEffect != null) {
                 GameObject effect = Instantiate(destructionEffect, transform.position, transform.rotation) as GameObject;
@@ -29,9 +32,11 @@ public class DestructionController : MonoBehaviour {
                 Instantiate(remains, transform.position, transform.rotation);
             }
             if (respawn) {
-                if (isDead)
-                    Respawn ();
-                else
+				if (isDead) {
+					HP = maxHP;
+					isDead = false;
+					RpcRespawn ();
+				} else
                     isDead = true;
             } else {
                 Destroy(gameObject);
@@ -39,11 +44,11 @@ public class DestructionController : MonoBehaviour {
         }
     }
 
-    private void Respawn() {
-        gameObject.SetActive (false);
-        transform.position = respawnPosition;
-        HP = maxHP;
-		isDead = false;
-        gameObject.SetActive (true);
-    }
+	[ClientRpc]
+    void RpcRespawn() {
+		if (isLocalPlayer) {
+			transform.position = respawnPosition;
+		}
+	}
+
 }
