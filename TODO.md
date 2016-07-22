@@ -1,8 +1,10 @@
-- Maps
-    - Multiplayer arena
-- Multiplayer Support
-    - Split screen?
-    - Network?
+- Multiplayer arena
+    - Player can shoot through glass walls
+    - Add static targets?
+- Split screen
+    - Allow players to sprint independently
+- Network
+    - Merge with Painball map when finished
 - Menu
     - Pick multiplayer or shooting gallery
     - If we have multiple modes, add those
@@ -16,4 +18,8 @@
     - Dying
     - Voice acting
 - Tuning
+    - Limit fire rate
+    - Restrict projectile targeting to visible targets
+    - Restrict projectile targeting to targets within range
     - Move nearest target calc point forward (half distance to object under cursor, with cap)
+- Scoring
