@@ -9,6 +9,7 @@ public class DestructionController : MonoBehaviour {
     [HideInInspector] public int HP;
     public bool respawn = false;
     private Vector3 respawnPosition;
+    [HideInInspector] public bool isDead = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,10 @@ public class DestructionController : MonoBehaviour {
                 Instantiate(remains, transform.position, transform.rotation);
             }
             if (respawn) {
-                Respawn();
+                if (isDead)
+                    Respawn ();
+                else
+                    isDead = true;
             } else {
                 Destroy(gameObject);
             }

@@ -16,6 +16,13 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (target != null) {
+            DestructionController dc = target.GetComponent<DestructionController> ();
+            if (dc != null && dc.isDead) {
+                target = null;
+            }
+        }
+
         Vector3 newPos;
 		if (target == null) {
             newPos = transform.position + velocity * Time.deltaTime;
