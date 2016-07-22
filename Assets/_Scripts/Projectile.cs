@@ -9,6 +9,9 @@ public class Projectile : MonoBehaviour {
     public int damage;
     public GameObject impactFX;
 
+    public AudioClip fireSound;
+    public AudioClip impactSound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -42,7 +45,13 @@ public class Projectile : MonoBehaviour {
         DestructionController controller = other.GetComponent(typeof(DestructionController)) as DestructionController;
         if (controller != null) {
             controller.HP -= damage;
+            controller.playHit();
         }
+
+        if (impactSound != null) {
+            AudioSource.PlayClipAtPoint(impactSound, new Vector3(0,0,0), 0.6f);
+        }
+
         if (impactFX != null) {
             GameObject effect = Instantiate(impactFX, transform.position, transform.rotation) as GameObject;
             ParticleSystem ps = effect.GetComponent(typeof(ParticleSystem)) as ParticleSystem;
@@ -50,4 +59,5 @@ public class Projectile : MonoBehaviour {
         }
 		Destroy (gameObject);
 	}
+
 }

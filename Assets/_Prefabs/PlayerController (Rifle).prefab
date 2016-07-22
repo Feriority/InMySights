@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 449568}
   - 20: {fileID: 2029434}
-  - 81: {fileID: 8190908}
   - 124: {fileID: 12455706}
   m_Layer: 0
   m_Name: FirstPersonCharacter
@@ -355,13 +354,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &8190908
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102038}
-  m_Enabled: 1
 --- !u!82 &8216518
 AudioSource:
   m_ObjectHideFlags: 1
@@ -479,7 +471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remains: {fileID: 0}
-  destructionEffect: {fileID: 0}
+  destructionEffect: {fileID: 100000, guid: e41a1ff11fe7f43e3bb0a215c7cd3d54, type: 2}
+  source: {fileID: 0}
+  damageSound: {fileID: 8300000, guid: bff7b8d254e16dd46bd9b8e56d65fa49, type: 3}
+  destructionSound: {fileID: 8300000, guid: 8b780abb96fbbaa46833327c09c682c9, type: 3}
   maxHP: 10
   HP: 0
   respawn: 1
