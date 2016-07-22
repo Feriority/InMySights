@@ -31,8 +31,9 @@ public class Projectile : MonoBehaviour {
             controller.HP -= damage;
         }
         if (impactFX != null) {
-            // TODO: Clean up explosions
-            Instantiate(impactFX, transform.position, transform.rotation);
+            GameObject effect = Instantiate(impactFX, transform.position, transform.rotation) as GameObject;
+            ParticleSystem ps = effect.GetComponent(typeof(ParticleSystem)) as ParticleSystem;
+            Destroy(effect, ps.duration);
         }
 		Destroy (gameObject);
 	}

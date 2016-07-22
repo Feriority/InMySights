@@ -14,8 +14,9 @@ public class DestructionController : MonoBehaviour {
 	void Update () {
         if (HP <= 0) {
             if (destructionEffect != null) {
-                // TODO: Clean up explosions
-                Instantiate(destructionEffect, transform.position, transform.rotation);
+                GameObject effect = Instantiate(destructionEffect, transform.position, transform.rotation) as GameObject;
+                ParticleSystem ps = effect.GetComponent(typeof(ParticleSystem)) as ParticleSystem;
+                Destroy(effect, ps.duration);
             }
             if (remains != null) {
                 Instantiate(remains, transform.position, transform.rotation);
