@@ -6,7 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerController : FirstPersonController {
 
 	public GameObject projectile;
-	private int projectileSpawnDistance = 2;
+    private float projectileSpawnDistance = 1.75f;
+    private float projectileSpawnOffsetX = 1.1f;
 	private float maxAngle = 40;
 
 	// Use this for initialization
@@ -21,6 +22,7 @@ public class PlayerController : FirstPersonController {
 		if(CrossPlatformInputManager.GetButtonDown ("Fire1")) {
 			Transform cameraTransform = m_Camera.transform;
 			Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
+            spawnPoint += cameraTransform.right * projectileSpawnOffsetX;
 
 			GameObject newObject = (GameObject) Instantiate (
 				projectile,
