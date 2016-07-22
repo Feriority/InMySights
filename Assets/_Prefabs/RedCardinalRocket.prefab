@@ -30,6 +30,8 @@ GameObject:
   - 64: {fileID: 6405062}
   - 114: {fileID: 11426140}
   - 54: {fileID: 5402940}
+  - 114: {fileID: 11425604}
+  - 114: {fileID: 11412714}
   m_Layer: 0
   m_Name: RedCardinalRocket
   m_TagString: Untagged
@@ -124,6 +126,58 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 1f156feabc6d5d74cab4c055093eb4a0, type: 3}
+--- !u!114 &11412714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &11425604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 209
+    i1: 107
+    i2: 20
+    i3: 255
+    i4: 235
+    i5: 184
+    i6: 120
+    i7: 84
+    i8: 25
+    i9: 29
+    i10: 188
+    i11: 254
+    i12: 223
+    i13: 235
+    i14: 244
+    i15: 41
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &11426140
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -17,23 +18,33 @@ public class PlayerController : FirstPersonController {
 	
 	// Update is called once per frame
 	protected override void Update () {
+		if (!shouldDoUpdates)
+			return;
+	
 		base.Update();
 
-        if(CrossPlatformInputManager.GetButtonDown ("Fire1_P" + playerNumber)) {
-			Transform cameraTransform = m_Camera.transform;
-			Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
-            spawnPoint += cameraTransform.right * projectileSpawnOffsetX;
-
-			GameObject newObject = (GameObject) Instantiate (
-				projectile,
-				spawnPoint,
-                cameraTransform.rotation * Quaternion.Euler(0,90,90)
-			);
-
-			Projectile newProjectile = newObject.GetComponent<Projectile> ();
-			newProjectile.velocity = cameraTransform.forward * newProjectile.maxSpeed;
-			newProjectile.target = FindNearestTarget (spawnPoint, cameraTransform.forward);
+		if(CrossPlatformInputManager.GetButtonDown ("Fire1_P" + playerNumber)) {
+			CmdShoot ();
 		}
+	}
+
+	[Command]
+	void CmdShoot() {
+		Transform cameraTransform = m_Camera.transform;
+		Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
+		spawnPoint += cameraTransform.right * projectileSpawnOffsetX;
+
+		GameObject newObject = (GameObject) Instantiate (
+			projectile,
+			spawnPoint,
+			cameraTransform.rotation * Quaternion.Euler(0,90,90)
+		);
+
+		Projectile newProjectile = newObject.GetComponent<Projectile> ();
+		newProjectile.velocity = cameraTransform.forward * newProjectile.maxSpeed;
+		newProjectile.target = FindNearestTarget (spawnPoint, cameraTransform.forward);
+
+		NetworkServer.Spawn (newObject);
 	}
 
 	private GameObject FindNearestTarget(Vector3 fromPoint, Vector3 fromDirection) {
