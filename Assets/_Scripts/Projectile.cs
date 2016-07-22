@@ -22,6 +22,10 @@ public class Projectile : MonoBehaviour {
 		} else {
 			float time = Vector3.Distance(target.transform.position, transform.position) / maxSpeed;
             newPos = Vector3.SmoothDamp (transform.position, target.transform.position, ref velocity, time, maxSpeed);
+
+            Quaternion newHeading = Quaternion.LookRotation(velocity) * Quaternion.Euler(0,90,90);
+
+            GetComponent<Rigidbody>().MoveRotation(newHeading);
 		}
         GetComponent<Rigidbody> ().velocity = (newPos - transform.position) / Time.deltaTime;
 	}

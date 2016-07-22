@@ -27,7 +27,7 @@ public class PlayerController : FirstPersonController {
 			GameObject newObject = (GameObject) Instantiate (
 				projectile,
 				spawnPoint,
-				cameraTransform.rotation
+                cameraTransform.rotation * Quaternion.Euler(0,90,90)
 			);
 
 			Projectile newProjectile = newObject.GetComponent<Projectile> ();

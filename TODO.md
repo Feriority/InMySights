@@ -9,7 +9,7 @@
 - Single player?
     - Enemies
     - Maps
-- More destrucible objects
+- More destructible objects?
 - Sound FX
     - Projectiles
     - Destructible stuff
