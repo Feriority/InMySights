@@ -400,6 +400,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 11478598, guid: 25c22fc7194132843af313ac49b83743, type: 2}
+      propertyPath: destructionEffect
+      value: 
+      objectReference: {fileID: 100004, guid: 9b26e1efdb8fd4d53b35c3c6b7f50cf5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25c22fc7194132843af313ac49b83743, type: 2}
   m_IsPrefabParent: 0
@@ -580,6 +584,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11447136, guid: c31fc5a58e5839e479e7f228e06c922c, type: 2}
+      propertyPath: destructionEffect
+      value: 
+      objectReference: {fileID: 100000, guid: 2f9e7030759a647e5b7ec0b46dd414f0, type: 2}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: c31fc5a58e5839e479e7f228e06c922c, type: 2}

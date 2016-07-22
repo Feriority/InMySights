@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remains: {fileID: 192060, guid: df426c2c6d03d5942a7c94a073053143, type: 2}
-  destructionEffect: {fileID: 100008, guid: 337943813ac55274db17d9c4dfcaf5ea, type: 2}
+  destructionEffect: {fileID: 100000, guid: 07e0b48432a2942a4b04b88d70d29cbc, type: 2}
   HP: 2
 --- !u!1001 &100100000
 Prefab:
