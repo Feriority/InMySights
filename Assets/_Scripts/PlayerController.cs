@@ -51,8 +51,13 @@ public class PlayerController : FirstPersonController {
 		foreach (GameObject obj in objs) {
 			Vector3 ray = obj.transform.position -  fromPoint;
 			float distance = Vector3.Magnitude (ray);
-			float angle = Vector3.Angle (fromDirection, ray);
-			if (angle > maxAngle) { continue; }
+            float angle = Vector3.Angle (fromDirection, ray);
+
+            if (angle > maxAngle) { continue; }
+
+            RaycastHit hit;
+            bool sightBlocked = Physics.Raycast (m_Camera.transform.position, ray, out hit, distance);
+            if (sightBlocked) { continue; }
 
 			if (distance < minDistance || (distance == minDistance && angle < minAngle)) {
 				minDistance = distance;
