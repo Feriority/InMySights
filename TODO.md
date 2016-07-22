@@ -1,0 +1,20 @@
+- Mechanics
+    - Player HP/damage
+    - Respawning
+- Maps
+    - Multiplayer arena
+- Multiplayer Support
+    - Split screen?
+    - Network?
+- Menu
+    - Pick multiplayer or shooting gallery
+    - If we have multiple modes, add those
+- Single player?
+    - Enemies
+    - Maps
+- More destrucible objects
+- Sound FX
+    - Projectiles
+    - Destructible stuff
+    - Dying
+    - Voice acting

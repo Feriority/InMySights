@@ -11,9 +11,9 @@ GameObject:
   - 33: {fileID: 3393152}
   - 135: {fileID: 13530908}
   - 23: {fileID: 2303040}
+  - 114: {fileID: 11410438}
   - 54: {fileID: 5472268}
   - 131: {fileID: 13150646}
-  - 114: {fileID: 11410438}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -97,6 +97,7 @@ MonoBehaviour:
   maxSpeed: 10
   velocity: {x: 0, y: 0, z: 0}
   damage: 1
+  impactFX: {fileID: 100000, guid: 3c1f0555cc3fd4e1d87382fbaa007f8f, type: 2}
 --- !u!131 &13150646
 GUITexture:
   m_ObjectHideFlags: 1
