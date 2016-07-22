@@ -6,8 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerController : FirstPersonController {
 
     [SerializeField] private GameObject projectile;
-    private float projectileSpawnDistance = 1.75f;
-    private float projectileSpawnOffsetX = 1.1f;
+    private float projectileSpawnDistance = 1.2f;
+    private float projectileSpawnOffsetX = 0.8f;
     [SerializeField] private float maxAngle;
     [SerializeField] private float secondsPerShot = 0.5f;
     private float timeSinceLastShot = 0;
@@ -29,6 +29,11 @@ public class PlayerController : FirstPersonController {
 			Transform cameraTransform = m_Camera.transform;
 			Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
             spawnPoint += cameraTransform.right * projectileSpawnOffsetX;
+
+            Vector3 ray = spawnPoint - cameraTransform.position;
+            // Prevent shooting through walls
+            if (Physics.Raycast (cameraTransform.position, ray, Vector3.Magnitude (ray)))
+                return;
 
 			GameObject newObject = (GameObject) Instantiate (
 				projectile,
