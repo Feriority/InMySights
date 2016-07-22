@@ -1,8 +1,6 @@
 - Multiplayer arena
     - Player can shoot through glass walls
     - Add static targets?
-- Split screen
-    - Allow players to sprint independently
 - Network
     - Merge with Painball map when finished
 - Menu
