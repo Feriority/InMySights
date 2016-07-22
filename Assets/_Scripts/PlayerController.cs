@@ -5,10 +5,10 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerController : FirstPersonController {
 
-	public GameObject projectile;
+    [SerializeField] private GameObject projectile;
     private float projectileSpawnDistance = 1.75f;
     private float projectileSpawnOffsetX = 1.1f;
-	private float maxAngle = 40;
+    [SerializeField] private float maxAngle;
 
 	// Use this for initialization
 	protected override void Start () {
