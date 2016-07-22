@@ -138,7 +138,7 @@ MonoBehaviour:
   maxDamageFrames: 0
   source: {fileID: 0}
   damageSound: {fileID: 0}
-  destructionSound: {fileID: 0}
+  destructionSound: {fileID: 8300000, guid: 7bb77addc1c799648b8c7bfd09aa71af, type: 3}
   maxHP: 1
   HP: 1
   respawn: 0

@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remains: {fileID: 117018, guid: 92a7d92b0d91ae14ba3088425f1d07bc, type: 2}
-  destructionEffect: {fileID: 100004, guid: 9b26e1efdb8fd4d53b35c3c6b7f50cf5, type: 2}
+  destructionEffect: {fileID: 0}
   camera: {fileID: 0}
   maxDamageFrames: 0
   source: {fileID: 0}
