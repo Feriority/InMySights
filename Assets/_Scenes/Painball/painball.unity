@@ -2130,6 +2130,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 11499554, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029434, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
   m_IsPrefabParent: 0
@@ -3579,6 +3587,14 @@ Prefab:
     - target: {fileID: 470524, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029434, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029434, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2c9e5685377cd34192ebe66267ecb92, type: 2}
