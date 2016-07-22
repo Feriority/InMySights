@@ -44,6 +44,7 @@ public class PlayerController : FirstPersonController {
 			Projectile newProjectile = newObject.GetComponent<Projectile> ();
 			newProjectile.velocity = cameraTransform.forward * newProjectile.maxSpeed;
 			newProjectile.target = FindNearestTarget (spawnPoint, cameraTransform.forward);
+            AudioSource.PlayClipAtPoint(newProjectile.fireSound, new Vector3(0,0,0));
 		}
 	}
 
