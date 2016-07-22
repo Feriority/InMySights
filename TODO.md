@@ -13,3 +13,8 @@
     - Enemies
     - Maps
 - More destrucible objects
+- Sound FX
+    - Projectiles
+    - Destructible stuff
+    - Dying
+    - Voice acting
