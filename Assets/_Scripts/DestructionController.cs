@@ -63,6 +63,7 @@ public class DestructionController : MonoBehaviour {
     private void Respawn() {
         transform.position = respawnPosition;
         HP = maxHP;
+        isDead = false;
     }
 
     public void playHit() {
