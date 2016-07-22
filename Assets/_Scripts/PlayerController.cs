@@ -9,6 +9,8 @@ public class PlayerController : FirstPersonController {
     private float projectileSpawnDistance = 1.75f;
     private float projectileSpawnOffsetX = 1.1f;
     [SerializeField] private float maxAngle;
+    [SerializeField] private float secondsPerShot = 0.5f;
+    private float timeSinceLastShot = 0;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -19,7 +21,11 @@ public class PlayerController : FirstPersonController {
 	protected override void Update () {
 		base.Update();
 
-        if(m_IsWalking && CrossPlatformInputManager.GetButtonDown ("Fire1_P" + playerNumber)) {
+        if (timeSinceLastShot <= secondsPerShot) {
+            timeSinceLastShot += Time.deltaTime;
+        } else if (m_IsWalking && CrossPlatformInputManager.GetButton ("Fire1_P" + playerNumber)) {
+            timeSinceLastShot = 0;
+
 			Transform cameraTransform = m_Camera.transform;
 			Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
             spawnPoint += cameraTransform.right * projectileSpawnOffsetX;

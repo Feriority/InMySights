@@ -16,7 +16,6 @@
     - Dying
     - Voice acting
 - Tuning
-    - Limit fire rate
     - Restrict projectile targeting to visible targets
     - Restrict projectile targeting to targets within range
     - Move nearest target calc point forward (half distance to object under cursor, with cap)
