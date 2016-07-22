@@ -19,7 +19,7 @@ public class PlayerController : FirstPersonController {
 	protected override void Update () {
 		base.Update();
 
-        if(CrossPlatformInputManager.GetButtonDown ("Fire1_P" + playerNumber)) {
+        if(m_IsWalking && CrossPlatformInputManager.GetButtonDown ("Fire1_P" + playerNumber)) {
 			Transform cameraTransform = m_Camera.transform;
 			Vector3 spawnPoint = cameraTransform.position + (cameraTransform.forward * projectileSpawnDistance);
             spawnPoint += cameraTransform.right * projectileSpawnOffsetX;
