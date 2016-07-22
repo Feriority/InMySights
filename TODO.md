@@ -1,5 +1,4 @@
 - Multiplayer arena
-    - Player can shoot through glass walls
     - Add static targets?
 - Network
     - Merge with Painball map when finished
