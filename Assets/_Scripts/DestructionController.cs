@@ -43,6 +43,7 @@ public class DestructionController : MonoBehaviour {
         gameObject.SetActive (false);
         transform.position = respawnPosition;
         HP = maxHP;
+		isDead = false;
         gameObject.SetActive (true);
     }
 }
