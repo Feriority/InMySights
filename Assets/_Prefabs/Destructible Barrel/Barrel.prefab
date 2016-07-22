@@ -134,7 +134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remains: {fileID: 0}
   destructionEffect: {fileID: 100004, guid: 9b26e1efdb8fd4d53b35c3c6b7f50cf5, type: 2}
+  maxHP: 1
   HP: 1
+  respawn: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

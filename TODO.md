@@ -1,6 +1,3 @@
-- Mechanics
-    - Player HP/damage
-    - Respawning
 - Maps
     - Multiplayer arena
 - Multiplayer Support
